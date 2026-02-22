@@ -68,3 +68,32 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# npx create-react-app appName
+# Tailwindcss setup
+    - npm i -D tailwindcss@version postcss autoprefixer
+    - npx tailwindcss init -p => creates postcss & tailwind configs
+    - add this configuration in tailwind config content -  "./src/**/*.{js,jsx,ts,tsx}"
+    - import base components utilities in index.css 
+
+
+
+
+
+
+Features 
+    - Login/Signup
+      - Sign In / Sign Up
+      - Redirect to Browse page
+  
+    - Browse (only after authentication)
+      - Header 
+      - Main Movie container
+        - Trailer in the bg
+        - Title & Description
+        - Movie Suggestions
+          - Movielist * n
+  
+    - Nextflix GPT
+      - Searchbar 
+      - Movie Suggestions
