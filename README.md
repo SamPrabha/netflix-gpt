@@ -75,10 +75,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
     - npx tailwindcss init -p => creates postcss & tailwind configs
     - add this configuration in tailwind config content -  "./src/**/*.{js,jsx,ts,tsx}"
     - import base components utilities in index.css 
-
-
-
-
+# Routing setup
+    - npm i -D react-router-dom  
 
 
 Features 
