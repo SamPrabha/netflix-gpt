@@ -5,19 +5,42 @@ import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 // import { ErrorPage } from "./ErrorPage";
+import { onAuthStateChanged } from "firebase/auth";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { addUser, removeUser } from "../utils/userSlice";
 export const Header = () => {
     const fetchUserDetails = useSelector((store) => store.user);
-    console.log('these are user details', fetchUserDetails);
+    // console.log('these are user details', fetchUserDetails);
 
     const navigate = useNavigate();
     const signOutHandler = () => {
-        signOut(auth).then(() => {
-            navigate('/');
-        }).catch((error) => {
+        signOut(auth).then(() => { }).catch((error) => {
             // An error happened.
             navigate('/error');
         });
     }
+    // add useEffect for auth handler
+    const user_Dispatch = useDispatch();
+    const Navigate = useNavigate();
+    // add auth event listener once
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in, see docs for a list of available properties
+                // https://firebase.google.com/docs/reference/js/auth.user
+                const { uid, email, password, displayName } = user;
+                user_Dispatch(addUser({ uid: uid, email: email, password: password, displayName: displayName }));
+                Navigate('/browse');
+            } else {
+                // User is signed out
+                user_Dispatch(removeUser());
+                Navigate('/');
+            }
+        });
+        // cleanups
+        return () => unsubscribe();
+    }, [])
     return (
         <div className="sticky top-0 z-50 flex items-center justify-between px-6 py-3 bg-black shadow-md">
             {/* Left - Logo */}

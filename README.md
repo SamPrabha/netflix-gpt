@@ -109,6 +109,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
   - npm i -D @reduxjs/toolkit
   - npm i -D react-redux
 
+# API Setup - TMDB
+  - https://www.themoviedb.org/settings/api
+  - get API Key & Access Token
+  - in TMDB doc, route to API reference - https://developer.themoviedb.org/reference/getting-started
+  - https://developer.themoviedb.org/reference/movie-now-playing-list
+
 Features 
     - Login/Signup
       - Sign In / Sign Up
@@ -119,8 +125,8 @@ Features
       - Main Movie container
         - Trailer in the bg
         - Title & Description
-        - Movie Suggestions
-          - Movielist * n
+      - Movie List/ Suggestions (Secondory container)
+          - Movielist * n (cards * n)
   
     - Nextflix GPT
       - Searchbar 

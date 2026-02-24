@@ -4,12 +4,11 @@ import { useRef, useState } from "react";
 import { loginFormValidate } from "../utils/loginFormValidate";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 export const Login = () => {
     const updateUserDispatch = useDispatch();
-    const navigate = useNavigate();
+
     // state var for sign in/sign up toggle
     const [isSignInForm, setIsSignInForm] = useState(true);
     const [errorMsg, setErrorMsg] = useState(null);
@@ -42,7 +41,7 @@ export const Login = () => {
                         // Profile updated! Now navigate to browse
                         const { uid, email, password, displayName } = auth.currentUser;
                         updateUserDispatch(addUser({ uid: uid, email: email, password: password, displayName: displayName }))
-                        navigate('/browse');
+
                     }).catch((error) => {
                         // An error occurred
                         setErrorMsg(error);
@@ -58,7 +57,7 @@ export const Login = () => {
                 .then((userCreds) => {
                     const user = userCreds.user;
                     console.log('successful login', user);
-                    navigate('/browse');
+
                 })
                 .catch((error) => {
                     console.log('these are errors', error)
