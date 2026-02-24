@@ -78,6 +78,36 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 # Routing setup
     - npm i -D react-router-dom  
 
+# Firebase setup (Authentication)
+  - https://console.firebase.google.com/
+  - Create a project 
+  - Add Web App to Project (</>)
+  - npm install firebase (firebase hosting)
+  - Create firebase.js and add config provided by firebase
+  - npm install -g firebase-tools
+  - go to authentication 
+    - get started
+    - using email password - enable it
+  - to deploy - 
+        - firebase login 
+        -  firebase init 
+           -  Hosting: Set up deployments for static web apps 
+           -  select project(from firebase profile)
+           -  public directory - build
+           -  ✔ What do you want to use as your public directory? - build
+           -  ✔ Configure as a single-page app (rewrite all urls to /index.html)? - No
+           -  ✔ Set up automatic builds and deploys with GitHub? - No
+        -  firebase deploy
+           -  npm run build
+           -  firebase deploy
+        - Authentication
+          - Authentication
+          - Password Authentication
+            - Sign up user api - always use modular api
+          - 
+# RTK
+  - npm i -D @reduxjs/toolkit
+  - npm i -D react-redux
 
 Features 
     - Login/Signup

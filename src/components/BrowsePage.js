@@ -1,5 +1,10 @@
+import { Header } from "./Header"
+
 export const BrowsePage = () => {
     return (
-        <>Hello I am browse page</>
+        <>
+            <Header />
+            Hello I am browse page
+        </>
     )
 }
