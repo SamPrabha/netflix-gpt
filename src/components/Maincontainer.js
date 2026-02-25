@@ -5,11 +5,11 @@ import { VideoTitle } from "./VideoTitle";
 export const MainContainer = () => {
     const movies = useSelector((store) => store.movies?.nowPlayingMovies);
     if (!movies) return; //early return to avoid errors if(movies===null)
-    const mainMovie = movies[0];
+    const mainMovie = movies[2];
     // console.log('main movie', mainMovie);
     const { id, original_title, overview } = mainMovie;
     return (
-        <div className="relative h-screen w-screen">
+        <div className="relative min-h-screen w-full overflow-hidden">
 
             {/* Title Centered */}
             <div className="absolute inset-0 z-10 flex items-center px-4">

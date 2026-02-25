@@ -12,3 +12,11 @@ export const API_Options = {
 };
 
 export const nowPlayingMovies = 'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1';
+
+export const popularMovies = "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1";
+
+export const topRatedMovies = "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1";
+
+export const upcomingMovies = "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1";
+
+export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500";

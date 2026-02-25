@@ -7,10 +7,10 @@ export const BrowsePage = () => {
 
     useNowPlayingMoviesHook(); //custom hook created for fetching movie list and storing it to RTK - movie slice
     return (
-        <>
+        <div className="bg-black">
             <Header />
             <MainContainer />
             <SecondaryContainer />
-        </>
+        </div>
     )
 }

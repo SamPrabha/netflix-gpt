@@ -3,14 +3,18 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addNowPlayingMovies } from "../utils/MovieSlice";
 export const useNowPlayingMoviesHook = () => {
-    const Dispatch = useDispatch();
-    const getNowPlayingMovies = async () => {
-        const data = await fetch(nowPlayingMovies, API_Options);
-        const jsonData = await data.json();
-        // console.log('this is movies data', jsonData.results);
-        Dispatch(addNowPlayingMovies(jsonData.results))
-    }
+    const dispatch = useDispatch();
+
     useEffect(() => {
+        const getNowPlayingMovies = async () => {
+            const data = await fetch(nowPlayingMovies, API_Options);
+            const jsonData = await data.json();
+            // console.log("this is movies data", jsonData.results);
+
+            dispatch(addNowPlayingMovies(jsonData.results));
+        };
+
         getNowPlayingMovies();
-    }, [])
-}
+    }, [dispatch]);
+};
+
