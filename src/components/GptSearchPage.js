@@ -28,7 +28,7 @@ export const GptSearchPage = () => {
                             <GptSearchBar language={langVal} />
                         </div>
 
-                        <div className="w-full flex justify-center mt-4">
+                        <div className="w-full w-6xl mx-auto mt-4 px-4">
                             <GptSearchSuggestions />
                         </div>
                     </div>

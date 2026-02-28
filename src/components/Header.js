@@ -14,6 +14,7 @@ import { Language_Support } from "../utils/languageSupport";
 import { changeLang } from "../utils/configSlice";
 export const Header = () => {
     const fetchUserDetails = useSelector((store) => store.user);
+    const isGptPage = useSelector((store) => store.gpt.showGptSearch);
     // console.log('these are user details', fetchUserDetails);
 
     const navigate = useNavigate();
@@ -61,10 +62,10 @@ export const Header = () => {
 
             {/* Right - User Section */}
             {fetchUserDetails && <div className="flex items-center gap-4">
-                <select className="text-white bg-transparent px-3 py-1 border rounded" onChange={(e) => selectOptionHandler(e.target.value)}>
+                {isGptPage && <select className="text-white bg-transparent px-3 py-1 border rounded" onChange={(e) => selectOptionHandler(e.target.value)}>
                     {Language_Support.map((lang) => <option key={lang.identifier} value={lang.identifier} className="text-black"
                     > {lang.name} </option>)}
-                </select>
+                </select>}
                 <button
                     onClick={showGptSearchHandler}
                     type="button"

@@ -1,6 +1,7 @@
 const ACCESS_TOKEN = process.env.REACT_APP_TMDB_ACCESS_TOKEN;
-const API_KEY = process.env.API_KEY;
+// const API_KEY = process.env.API_KEY;
 
+export const OPENAI_GPT_KEY = process.env.REACT_APP_OPEN_AI_GPT_KEY;
 // console.log("ACCESS_TOKEN:", ACCESS_TOKEN);
 
 export const API_Options = {
@@ -19,4 +20,6 @@ export const topRatedMovies = "https://api.themoviedb.org/3/movie/top_rated?lang
 
 export const upcomingMovies = "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1";
 
-export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500";
+// export const searchMovie = "https://api.themoviedb.org/3/search/movie";
+
+export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500"; 

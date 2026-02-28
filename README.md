@@ -115,6 +115,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
   - in TMDB doc, route to API reference - https://developer.themoviedb.org/reference/getting-started
   - https://developer.themoviedb.org/reference/movie-now-playing-list
 
+# Open ai setup
+  - https://platform.openai.com/chat (do login)
+  - Go to API keys - https://platform.openai.com/api-keys
+  - Create new secret key , copy it , store it in .env (REACT_APP_) and use via process.env
+  - npm i openai
+  - create authorization - openai.js(hrlper func)
+  - 
+
 Features 
     - Login/Signup
       - Sign In / Sign Up
@@ -128,6 +136,6 @@ Features
       - Movie List/ Suggestions (Secondory container)
           - Movielist * n (cards * n)
   
-    - Nextflix GPT
+    - Nextflix GPT - *(Multi Language Support)
       - Searchbar 
       - Movie Suggestions
