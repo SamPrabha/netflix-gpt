@@ -1,11 +1,11 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { API_Options } from "../utils/constant";
 import { useEffect } from "react";
 import { addMovieTrailer } from "../utils/MovieSlice";
 export const useMovieTrailer = ({ movieID }) => {
     // console.log(movieID);
     const dispatch = useDispatch();
-
+    const isTrailerAvailable = useSelector((store) => store.movies.movieTrailer);
     const fetchMovieTrailer = async () => {
         const fetchData = await fetch(`https://api.themoviedb.org/3/movie/${movieID}/videos`, API_Options);
         const data = await fetchData.json();
@@ -18,7 +18,7 @@ export const useMovieTrailer = ({ movieID }) => {
     }
 
     useEffect(() => {
-        fetchMovieTrailer();
+        !isTrailerAvailable && fetchMovieTrailer(); //if data is not there for trailer then only make an api call
     }, [])
 
 }
